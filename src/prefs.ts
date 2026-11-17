@@ -7,6 +7,7 @@ import {
 } from "resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js";
 
 import { SettingsKey } from "@infra/gnome/settingsKeys";
+import { BorderGroup } from "@prefs/borderGroup";
 import { KeywordSearchGroups } from "@prefs/keywordSearchGroups";
 import { ShortcutRow } from "@prefs/shortcutRow";
 
@@ -29,6 +30,7 @@ export default class LauncherPreferences extends ExtensionPreferences {
     const page = new Adw.PreferencesPage();
 
     page.add(this.buildSearchGroup(settings));
+    page.add(new BorderGroup(settings).group);
     page.add(this.buildPrefixGroup());
 
     const keywordSearches = new KeywordSearchGroups(settings);

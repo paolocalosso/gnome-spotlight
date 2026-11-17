@@ -15,6 +15,15 @@ msgstr ""
 msgid "App"
 msgstr "App"
 
+msgid "Border"
+msgstr "Rahmen"
+
+msgid "Border color"
+msgstr "Rahmenfarbe"
+
+msgid "Border width"
+msgstr "Rahmenbreite"
+
 msgid "Browse files and folders"
 msgstr "Dateien und Ordner durchsuchen"
 
@@ -32,6 +41,9 @@ msgstr "Ändern"
 
 msgid "Command"
 msgstr "Befehl"
+
+msgid "Corner radius"
+msgstr "Eckenradius"
 
 msgid "Could not open the result"
 msgstr "Das Ergebnis konnte nicht geöffnet werden"
@@ -91,6 +103,9 @@ msgstr "System"
 
 msgid "Use Super, Ctrl or Alt together with another key."
 msgstr "Benutze Super, Strg oder Alt zusammen mit einer anderen Taste."
+
+msgid "Use the theme color"
+msgstr "Farbe des Themas verwenden"
 
 msgid "Web"
 msgstr "Web"

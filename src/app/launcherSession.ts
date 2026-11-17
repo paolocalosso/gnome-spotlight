@@ -36,7 +36,11 @@ export class LauncherSession {
     private readonly settings: Gio.Settings,
     private readonly t: Translate,
   ) {
-    this.overlay = new LauncherOverlay(t);
+    this.overlay = new LauncherOverlay(t, () => ({
+      width: settings.get_int(SettingsKey.BORDER_WIDTH),
+      radius: settings.get_int(SettingsKey.BORDER_RADIUS),
+      color: settings.get_string(SettingsKey.BORDER_COLOR),
+    }));
 
     const providers = createSearchProviders({
       apps: this.apps,

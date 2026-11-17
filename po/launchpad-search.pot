@@ -12,6 +12,15 @@ msgstr ""
 msgid "App"
 msgstr ""
 
+msgid "Border"
+msgstr ""
+
+msgid "Border color"
+msgstr ""
+
+msgid "Border width"
+msgstr ""
+
 msgid "Browse files and folders"
 msgstr ""
 
@@ -28,6 +37,9 @@ msgid "Change"
 msgstr ""
 
 msgid "Command"
+msgstr ""
+
+msgid "Corner radius"
 msgstr ""
 
 msgid "Could not open the result"
@@ -103,6 +115,9 @@ msgid "Type the keyword before the text, for example: @y cats"
 msgstr ""
 
 msgid "Use Super, Ctrl or Alt together with another key."
+msgstr ""
+
+msgid "Use the theme color"
 msgstr ""
 
 msgid "Web"

@@ -5,6 +5,7 @@ import { ensureActorVisibleInScrollView } from "resource:///org/gnome/shell/misc
 import { MonitorConstraint } from "resource:///org/gnome/shell/ui/layout.js";
 import * as Main from "resource:///org/gnome/shell/ui/main.js";
 
+import { buildPanelBorderStyle, type PanelBorder } from "@domain/appearance/panelBorder";
 import { PanelSurface, resolvePanelSurface } from "@domain/appearance/panelSurface";
 import { getResultLabel } from "@domain/search/resultKindLabel";
 import type { SearchResult } from "@domain/search/searchResult";
@@ -60,7 +61,10 @@ export class LauncherOverlay implements LauncherView {
   private grab: Clutter.Grab | null = null;
   private listener: LauncherListener | null = null;
 
-  constructor(private readonly t: Translate) {
+  constructor(
+    private readonly t: Translate,
+    private readonly readBorder: () => PanelBorder,
+  ) {
     this.entry = new St.Entry({
       style_class: "launcher-entry",
       hint_text: t("Search apps, windows, files or type a calculation"),
@@ -136,6 +140,7 @@ export class LauncherOverlay implements LauncherView {
 
     this.placeOnCurrentMonitor();
     this.applyPanelSurface();
+    this.panel.set_style(buildPanelBorderStyle(this.readBorder()));
     Main.layoutManager.modalDialogGroup.add_child(this.backdrop);
 
     this.grab = Main.pushModal(this.backdrop, { actionMode: Shell.ActionMode.SYSTEM_MODAL });

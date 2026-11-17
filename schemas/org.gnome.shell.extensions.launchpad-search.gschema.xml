@@ -18,5 +18,19 @@
       <default>{'@y': 'https://www.youtube.com/results?search_query=%s', '@w': 'https://en.wikipedia.org/w/index.php?search=%s'}</default>
       <summary>Keyword searches: typing the keyword before the text opens the address, %s is replaced by the text</summary>
     </key>
+    <key name="border-width" type="i">
+      <range min="0" max="10"/>
+      <default>1</default>
+      <summary>Panel border width in pixels</summary>
+    </key>
+    <key name="border-radius" type="i">
+      <range min="0" max="40"/>
+      <default>25</default>
+      <summary>Panel corner radius in pixels</summary>
+    </key>
+    <key name="border-color" type="s">
+      <default>''</default>
+      <summary>Panel border color as a CSS color, empty uses the theme color</summary>
+    </key>
   </schema>
 </schemalist>
