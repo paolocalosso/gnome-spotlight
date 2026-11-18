@@ -203,6 +203,7 @@ export class LauncherOverlay implements LauncherView {
     this.entry.clutter_text.connect("key-press-event", (_actor, event: Clutter.Event) =>
       this.onKeyPress(event.get_key_symbol()),
     );
+    this.entry.clutter_text.connect("activate", () => void this.listener?.onActivateSelected());
     this.backdrop.connect("button-press-event", (_actor, event: Clutter.Event) =>
       this.onBackdropPress(event),
     );
