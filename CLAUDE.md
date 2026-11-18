@@ -53,11 +53,13 @@ prefixo do log. Classes, arquivos e classes CSS usam o nome genérico `Launcher`
 - O `modalDialogGroup` usa `BinLayout`: `set_position`/`set_size` no fundo da busca não
   valem nada e ele cobre todos os monitores (o painel caía na emenda entre dois). Quem
   prende o fundo ao monitor do ponteiro é o `Layout.MonitorConstraint`, como no `ModalDialog`.
-- Blur é do Blur my Shell, não nosso. O componente de popups dele vigia o
-  `modalDialogGroup` e desfoca, com cantos arredondados, atores com classe de diálogo; o
-  painel leva `clipboard-dialog` (o tema do GNOME não estiliza essa classe). Sem o Blur my
-  Shell o painel fica sólido (`resolvePanelSurface`). O raio do painel (18px) precisa bater
-  com o `dialog-corner-radius` dele. Já tentado e descartado: `Shell.BlurEffect` próprio
+- Blur é do Blur my Shell, não nosso. O painel leva `bms-popup-blur-target`, a classe de
+  opt-in do componente de popups dele (v78 em diante): ele desfoca o ator seguindo o
+  `border-radius` do próprio painel (lido do theme node, então vale o estilo inline do
+  bordo configurável) e põe `bms-popup-blurred` no painel enquanto o blur existe. Antes
+  usávamos `clipboard-dialog` (classe do Copyous), que amarrava o raio ao
+  `dialog-corner-radius` do BMS. Sem o Blur my Shell o painel fica sólido
+  (`resolvePanelSurface`). Já tentado e descartado: `Shell.BlurEffect` próprio
   (sem raio de canto, sobra quina quadrada; e desfocar a tela inteira não é o efeito
   desejado).
 - Regra do tema GANHA da folha da extensão quando as duas estilizam a mesma propriedade

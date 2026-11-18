@@ -15,7 +15,7 @@ Conferido contra o código do gnome-shell 50.5 instalado (extraído de
 | Rodar comando | `misc/util.js` `trySpawn` | `shellCommandRunner.ts` |
 | Atalho global | `Main.wm.addKeybinding` / `removeKeybinding` | `launcherSession.ts` |
 | Janela modal | `Main.pushModal(actor, {actionMode: SYSTEM_MODAL})`, ator em `Main.layoutManager.modalDialogGroup` | `launcherOverlay.ts` |
-| Blur do painel | Blur my Shell: classe `clipboard-dialog` no painel; detecção por `global.blur_my_shell` | `launcherOverlay.ts`, `blurProvider.ts` |
+| Blur do painel | Blur my Shell (v78+): classe de opt-in `bms-popup-blur-target` no painel, o blur segue o `border-radius` dele; detecção por `global.blur_my_shell` | `launcherOverlay.ts`, `blurProvider.ts` |
 | Rolagem até a linha | `misc/animationUtils.js` `ensureActorVisibleInScrollView` | `launcherOverlay.ts` |
 | CSS claro/escuro | O Shell carrega `stylesheet-<variante>.css` antes de `stylesheet.css` (`extensionSystem.js`) | `scripts/build.ts` |
 | Tradução | `this.gettext` da instância de `Extension` | `extension.ts` |

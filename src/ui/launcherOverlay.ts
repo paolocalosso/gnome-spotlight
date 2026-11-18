@@ -27,7 +27,7 @@ export type LauncherListener = Pick<
 
 const TOP_OFFSET_RATIO = 0.25;
 const OPEN_ANIMATION_MS = 140;
-const BLUR_TARGET_CLASS = "clipboard-dialog";
+const BLUR_TARGET_CLASS = "bms-popup-blur-target";
 const ENTRY_INLINE_STYLE = "background-color: transparent; box-shadow: none; border: none;";
 
 const PANEL_SURFACE_CLASSES: Record<PanelSurface, string> = {
